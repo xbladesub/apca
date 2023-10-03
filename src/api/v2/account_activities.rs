@@ -148,7 +148,7 @@ pub enum ActivityType {
 
 
 /// An enumeration describing the side of a trade activity.
-#[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq)]
+#[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub enum Side {
   /// A buy of an asset.
   #[serde(rename = "buy")]
@@ -164,7 +164,7 @@ pub enum Side {
 
 /// A trade related activity.
 // TODO: Not all fields are hooked up.
-#[derive(Clone, Debug, Deserialize, Eq, PartialEq)]
+#[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 #[non_exhaustive]
 pub struct TradeActivity {
   /// An ID for the activity. Can be sent as `page_token` in requests to
